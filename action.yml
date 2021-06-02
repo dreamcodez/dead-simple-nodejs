@@ -22,7 +22,8 @@ runs:
         sudo mkdir -p /usr/local/lib/nodejs
         pushd /usr/local/lib/nodejs
 
-        curl https://nodejs.org/dist/v${{ inputs.NODE_VERSION }}/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz | \
+        echo "Downloading & Extracting NodeJS v${{ inputs.NODE_VERSION }} (${{ inputs.NODE_DISTRO }})"
+        curl -s https://nodejs.org/dist/v${{ inputs.NODE_VERSION }}/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz | \
           sudo tar -xJ --strip-components=1
 
         popd
