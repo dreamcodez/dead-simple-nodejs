@@ -1,4 +1,7 @@
 name: dead-simple-nodejs
+branding:
+  icon: archive
+  color: green
 description: Install NodeJS
 inputs:
   NODE_VERSION:

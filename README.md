@@ -1,6 +1,6 @@
-# action-install-nodejs
-dead simple nodejs binary installation
+# dead-simple-nodejs
 
+dead simple nodejs binary installation
 
 example workflow:
 
