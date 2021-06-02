@@ -1,4 +1,4 @@
-name: InstallNodeJS
+name: dead-simple-nodejs
 description: Install NodeJS
 inputs:
   NODE_VERSION:
