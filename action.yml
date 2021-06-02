@@ -19,9 +19,12 @@ runs:
     - name: Install NodeJS
       shell: bash
       run: |
-        pushd /usr/local/lib
+        mkdir -p /usr/local/lib/nodejs
+        pushd /usr/local/lib/nodejs
+
         curl https://nodejs.org/dist/v${{ inputs.NODE_VERSION }}/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz | \
           sudo tar -xJ --strip-components=1
+
         popd
 
         echo '/usr/local/lib/nodejs/bin' >> $GITHUB_PATH
