@@ -16,9 +16,8 @@ runs:
     - name: Install NodeJS
       shell: bash
       run: |
-        pushd /tmp
-        curl -O https://nodejs.org/dist/v${{ inputs.NODE_VERSION }}/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz
+        pushd /usr/local/lib
+        curl https://nodejs.org/dist/v${{ inputs.NODE_VERSION }}/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz | tar -xJf /usr/local/lib/nodejs
         popd
 
-        sudo tar -xJf /tmp/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz -C /usr/local/lib
-        echo '/usr/local/lib/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}/bin' >> $GITHUB_PATH
+        echo '/usr/local/lib/nodejs/bin' >> $GITHUB_PATH
