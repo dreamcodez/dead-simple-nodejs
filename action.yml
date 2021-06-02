@@ -1,0 +1,24 @@
+name: InstallNodeJS
+description: Install NodeJS
+inputs:
+  NODE_VERSION:
+    description: nodejs version to install
+    required: true
+  NODE_DISTRO:
+    description: nodejs distro to install
+    default: linux-x64
+    required: true
+runs:
+  using: composite
+  steps:
+    # https://github.com/nodejs/help/wiki/Installation
+    # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#adding-a-system-path
+    - name: Install NodeJS
+      shell: bash
+      run: |
+        pushd /tmp
+        curl -O https://nodejs.org/dist/v${{ inputs.NODE_VERSION }}/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz
+        popd
+
+        sudo tar -xJf /tmp/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz -C /usr/local/lib
+        echo '/usr/local/lib/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}/bin' >> $GITHUB_PATH
