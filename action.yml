@@ -19,7 +19,7 @@ runs:
     - name: Install NodeJS
       shell: bash
       run: |
-        mkdir -p /usr/local/lib/nodejs
+        sudo mkdir -p /usr/local/lib/nodejs
         pushd /usr/local/lib/nodejs
 
         curl https://nodejs.org/dist/v${{ inputs.NODE_VERSION }}/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz | \
