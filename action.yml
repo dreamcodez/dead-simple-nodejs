@@ -17,7 +17,8 @@ runs:
       shell: bash
       run: |
         pushd /usr/local/lib
-        curl https://nodejs.org/dist/v${{ inputs.NODE_VERSION }}/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz | tar -xJf /usr/local/lib/nodejs
+        curl https://nodejs.org/dist/v${{ inputs.NODE_VERSION }}/node-v${{ inputs.NODE_VERSION }}-${{ inputs.NODE_DISTRO }}.tar.xz | \
+          tar -xJf /usr/local/lib/nodejs
         popd
 
         echo '/usr/local/lib/nodejs/bin' >> $GITHUB_PATH
