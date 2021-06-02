@@ -2,7 +2,7 @@ name: dead-simple-nodejs
 branding:
   icon: archive
   color: green
-description: Install NodeJS
+description: Install fast & simply & with minimal dependencies
 inputs:
   NODE_VERSION:
     description: nodejs version to install
